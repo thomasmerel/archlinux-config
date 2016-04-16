@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ ! -z "$1" ]]; then
+
+        if [[ -d /sys/devices/platform/coretemp.0/hwmon/hwmon0/ ]]; then
+                ln -s /sys/devices/platform/coretemp.0/hwmon/hwmon0/$1 /tmp/$1
+        elif [[ -d /sys/devices/platform/coretemp.0/hwmon/hwmon1/ ]]; then
+                ln -d /sys/devices/platform/coretemp.0/hwmon/hwmon1/$1  /tmp/$1
+        elif [[ -d /sys/devices/platform/coretemp.0/hwmon/hwmon2/ ]]; then
+                ln -d /sys/devices/platform/coretemp.0/hwmon/hwmon2/$1  /tmp/$1
+        fi
+
+else
+        echo "No argument supplied"
+fi

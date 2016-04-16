@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+################################
+# Shows info about connected batteries.
+#
+# Dependencies:
+# - acpi
+#
+# @return {Number(%)}: Current battery charge
+################################
+
+dir=$(dirname $0)
+source $dir/util.sh
+
+full=""
+short=""
+status=0
+
+# Exit if no battery was found
+if [ "$(acpi)" == "" ]; then exit 0; fi
+
+state=$(acpi | sed -n 's/Battery [0-9]: \([A-Z]\).*, .*/\1/p')
+chg=$(acpi | sed -n 's/Battery [0-9]:.*, \([0-9]\{1,3\}\)%.*/\1/p')
+
+# Charging or Unknown
+if [ $state = "C" ] || [ $state = "U" ] || [ $state = "F" ]; then
+    icon=""
+    color="#00FF00"
+else
+    if [[ $chg -le 10 ]]; then
+        icon=""
+        color="#FF0000"
+    elif [[ $chg -le 25 ]]; then
+        icon=""
+        color="#FFAE00"
+    elif [[ $chg -le 50 ]]; then
+        icon=""
+        color="#FFF600"
+    elif [[ $chg -le 75 ]]; then
+        icon=""
+        color="#00FF00"
+    else
+        icon=""
+        color="#00FF00"
+    fi
+fi
+
+full="$icon $chg%"
+short="<span color=\"$color\">$chg%</span>"
+
+echo $full
+echo $short
+echo $color
+exit $status

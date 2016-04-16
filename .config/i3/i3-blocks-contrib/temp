@@ -1,0 +1,21 @@
+#!/bin/bash
+if [[ -f /tmp/temp$1_input ]]; then
+
+	temp=$(cat /tmp/temp$1_input | sed s/000//)
+
+	if [[ $temp -le  30 ]]; then
+		temp="<span color=\"blue\">$temp</span>"
+	elif [[ $temp -le 45 ]]; then
+		temp="<span color=\"lightgreen\">$temp</span>"
+	elif [[ $temp -le 65 ]]; then
+		temp="<span color=\"orange\">$temp</span>"
+	elif [[ $temp -le 90 ]]; then
+		temp="<span color=\"red\">$temp</span>"
+	else
+		temp="<span color=\"orange\" background=\"red\">$temp</span>"
+	fi
+	echo $temp°
+	exit 0
+fi
+
+exit 1
