@@ -33,7 +33,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # custom
-bindsym $mod+L exec "~/.config/i3/script/i3lock.sh"
+#bindsym $mod+L exec "~/.config/i3/script/i3lock.sh"
+bindsym $mod+L exec i3lock-fancy
 bindsym Print exec "~/.config/i3/script/scrot.sh"
 
 # kill focused window

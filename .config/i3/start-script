@@ -2,4 +2,4 @@
 
 cp temper /usr/bin/
 
-yaourt -S ttf-font-awesome i3blocks bc ttf-font-icons ponymix acpi i3lock dmenu pulseaudio pavucontrol
+yaourt -S ttf-font-awesome i3blocks bc ttf-font-icons ponymix acpi i3lock dmenu pulseaudio pavucontrol i3lock-fancy-git
