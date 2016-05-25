@@ -161,3 +161,17 @@ bar {
         tray_output primary
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
+
+
+##########
+# Custom #
+##########
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #ffffff #000000   #000000
+client.focused_inactive #000000 #000000 #888888 #000000   #000000
+client.unfocused        #000000 #000000 #888888 #000000   #000000
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff

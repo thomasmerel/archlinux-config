@@ -14,8 +14,8 @@ full=""
 short=""
 status=0
 
-interface=${BLOCK_INSTANCE:-"eth0"}
-# interface=${BLOCK_INSTANCE:-"wlp3s0"}
+interface=${BLOCK_INSTANCE:-"wlp2s0"}
+#interface=${BLOCK_INSTANCE:-"wlp3s0"}
 
 netPath=/sys/class/net
 interfacePath=$(echo $netPath/$interface)

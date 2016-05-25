@@ -38,4 +38,4 @@ fi
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 setxkbmap fr
-exec i3
+xrandr --dpi 226 & exec i3

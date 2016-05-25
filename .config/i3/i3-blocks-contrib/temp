@@ -5,9 +5,9 @@ if [[ -f /tmp/temp$1_input ]]; then
 
 	if [[ $temp -le  30 ]]; then
 		temp="<span color=\"blue\">$temp</span>"
-	elif [[ $temp -le 45 ]]; then
-		temp="<span color=\"lightgreen\">$temp</span>"
-	elif [[ $temp -le 65 ]]; then
+	elif [[ $temp -le 60 ]]; then
+		temp="<span color=\"lawngreen\">$temp</span>"
+	elif [[ $temp -le 80 ]]; then
 		temp="<span color=\"orange\">$temp</span>"
 	elif [[ $temp -le 90 ]]; then
 		temp="<span color=\"red\">$temp</span>"

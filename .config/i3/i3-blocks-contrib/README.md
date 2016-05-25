@@ -1,4 +1,4 @@
-# i3-blocks-contrib
+# i2-blocks-contrib
 
 A collection of useful blocks for [i3blocks](https://github.com/vivien/i3blocks), for the amazing [i3](https://i3wm.org) window manager.
 

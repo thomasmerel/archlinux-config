@@ -42,7 +42,7 @@ if [ $state == "up" ]; then
 
     full=$ip
     short=$full
-    echo $ip \($QUALITY%\) # full text
+    echo   $ip \($QUALITY%\) # full text
 fi
 
 #------------------------------------------------------------------------
