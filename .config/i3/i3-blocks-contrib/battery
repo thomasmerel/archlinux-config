@@ -30,6 +30,7 @@ else
     if [[ $chg -le 10 ]]; then
         icon=""
         color="#FF0000"
+	notify-send 'Warning!' 'Low battery.' -u critical -t 10000
     elif [[ $chg -le 25 ]]; then
         icon=""
         color="#FFAE00"
