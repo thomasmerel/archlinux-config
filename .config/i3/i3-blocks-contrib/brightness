@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 ################################
-# Shows info about sound/volume.
-# Allows simple volume controls.
+# Shows info about screen brightness.
+# Allows simple brightness controls.
 #
 # By Thomas MEREL <thomas.merel.44@gmail.com>
 # Base on @EliteTK sound manager for i3blocks
@@ -11,7 +11,7 @@
 # - xbacklight
 # - ttf-font-icons
 #
-# @return {Number}: Current volume
+# @return {Number}: Current screen luminosity
 ################################
 
 dir=$(dirname $0)

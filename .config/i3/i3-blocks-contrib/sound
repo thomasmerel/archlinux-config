@@ -50,19 +50,19 @@ vol=$(getVolume)
 # level-based icon
 if (( $vol == 0 )); then
 #	no sound
-	icon=""
+	icon=""
 elif (( $vol < 34 )); then
 #	low sound
-	icon=""
+	icon=""
 else
 #	high sound
-	icon=""
+	icon=""
 fi
 
 # determine mute status
 if isMuted; then
 	status=33
-	icon=""
+	icon=""
 fi
 
 full="$icon $vol%"
