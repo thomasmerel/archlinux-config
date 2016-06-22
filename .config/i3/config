@@ -37,6 +37,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+L exec "~/.config/i3/script/i3lock.sh"
 bindsym $mod+L exec i3lock-fancy
 bindsym Print exec "~/.config/i3/script/scrot.sh"
+bindsym XF86AudioRaiseVolume exec 'ponymix increase 5'
+bindsym XF86AudioLowerVolume exec 'ponymix decrease 5'
+#bindsym brightPlus exec 'xbacklight -inc 5'
+#bindsym brightPlus exec 'xbacklight -dec 5'
 
 # kill focused window
 bindsym $mod+Shift+q kill

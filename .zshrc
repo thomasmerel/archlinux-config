@@ -29,6 +29,7 @@ alias p-rem='sudo pacman -R'
 alias y-maj='sudo yaourt -Syua'
 alias nano='vim'
 alias weather='curl wttr.in/Nantes'
+alias chrome='google-chrome-stable'
 if [[ -t 0 && $(tty) =~ /dev/tty ]] && ! pgrep -u $USER startx &> /dev/null;then
         exec startx
 fi
