@@ -30,6 +30,14 @@ alias y-maj='sudo yaourt -Syua'
 alias nano='vim'
 alias weather='curl wttr.in/Nantes'
 alias chrome='google-chrome-stable'
+alias ssh-vul='ssh vulture@195.154.105.202'
+alias make='make -j 4'
+alias cp='rsync -avz --progress'
+alias webcam='vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"'
+alias repare-steam='find ~/.steam/root/ -name "libgpg-error.so*" -print -delete'
+
+source=~/.profile
+
 if [[ -t 0 && $(tty) =~ /dev/tty ]] && ! pgrep -u $USER startx &> /dev/null;then
         exec startx
 fi

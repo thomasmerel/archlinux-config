@@ -34,8 +34,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # custom
-#bindsym $mod+L exec "~/.config/i3/script/i3lock.sh"
-bindsym $mod+L exec i3lock-fancy
+bindsym $mod+L exec "~/.config/i3/script/i3lock.sh"
+#bindsym $mod+L exec i3lock-fancy
 bindsym Print exec "~/.config/i3/script/scrot.sh"
 bindsym XF86AudioRaiseVolume exec 'ponymix increase 5'
 bindsym XF86AudioLowerVolume exec 'ponymix decrease 5'
@@ -125,6 +125,10 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# switch between workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
