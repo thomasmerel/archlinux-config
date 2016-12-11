@@ -40,3 +40,4 @@ fi
 setxkbmap fr
 twmnd &
 xrandr --dpi 226 & exec i3
+#xrandr 1920x1080 & exec i3

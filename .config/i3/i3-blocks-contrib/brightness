@@ -8,8 +8,8 @@
 # Base on @EliteTK sound manager for i3blocks
 #
 # Dependencies:
-# - xbacklight
 # - lux
+# - calc
 # - ttf-font-icons
 #
 # @return {Number}: Current screen luminosity
@@ -25,10 +25,24 @@ status=0
 step=5
 
 getBrightness() {
-	xbacklight
+    # get lux return
+    local lux=$(lux)
+    
+    # get current and max
+    current=$( echo $lux | cut -d';' -f2)
+    ref=$(echo $lux | cut -d';' -f3)
+    
+    # calcul percent
+    calcul=$(calc "$current*100/$ref")
+
+    # round percent
+    round=$(printf '%.0f\n' $calcul)
+    
+    # return result
+    echo "$round"
 }
 
-
+# get mouse actions
 case $BLOCK_BUTTON in
     #right click
     #set to 20%
@@ -46,21 +60,22 @@ esac
 light=$(getBrightness)
 
 # level-based icon
-if (( $light -le 10 )); then
-#	no bright
+if [[ $light -le 20 && $light -ge 1 ]]; then
+#	low bright
 	icon=""
-elif (( $light -le 1)); then
+elif [[ $light -lt 1 ]]; then
+#   no bright and no black screen when brightness at 0%
     lux -S 1% > /dev/null
     icon=""
-elif (( $light -ge 90 )); then
-#	low bright
-	icon=""
-elif (( $light -lt 90 && $light -gt 10 )); then
+elif [[ $light -ge 80 ]]; then
 #	high bright
+	icon=""
+else
+#	middle bright
 	icon=""
 fi
 
-full="$icon ${light%.*}%"
+full="$icon $light%"
 short=$light
 
 echo $full
