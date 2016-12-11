@@ -46,18 +46,21 @@ esac
 light=$(getBrightness)
 
 # level-based icon
-if (( $light <= 10 )); then
+if (( $light -le 10 )); then
 #	no bright
 	icon=""
-elif (( $light >= 90 )); then
+elif (( $light -le 1)); then
+    lux -S 1% > /dev/null
+    icon=""
+elif (( $light -ge 90 )); then
 #	low bright
 	icon=""
-elif (( $light < 90 && $light > 10 )); then
+elif (( $light -lt 90 && $light -gt 10 )); then
 #	high bright
 	icon=""
 fi
 
-full=" ${light%.*}%"
+full="$icon ${light%.*}%"
 short=$light
 
 echo $full
