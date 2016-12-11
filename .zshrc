@@ -33,6 +33,7 @@ alias make='make -j 4'
 alias cp='rsync -avz --progress'
 alias webcam='vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"'
 alias repare-steam='find ~/.steam/root/ -name "libgpg-error.so*" -print -delete'
+alias discord='~/go/bin/discord-cli'
 
 source=~/.profile
 

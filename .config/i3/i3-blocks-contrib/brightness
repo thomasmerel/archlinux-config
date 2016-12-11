@@ -9,6 +9,7 @@
 #
 # Dependencies:
 # - xbacklight
+# - lux
 # - ttf-font-icons
 #
 # @return {Number}: Current screen luminosity
@@ -21,7 +22,7 @@ full=""
 short=""
 status=0
 
-step=${BLOCK_INSTANCE:-5}
+step=5%
 
 getBrightness() {
 	xbacklight
@@ -31,11 +32,11 @@ getBrightness() {
 case $BLOCK_BUTTON in
 	# scroll up
 	# raise bright
-	4) xbacklight -inc $step >/dev/null ;;
+	4) lux -a $step >/dev/null ;;
 
 	# scroll down
 	# lower bright
-	5) xbacklight -dec $step >/dev/null ;;
+	5) lux -s $step >/dev/null ;;
 esac
 
 light=$(getBrightness)
@@ -43,6 +44,7 @@ light=$(getBrightness)
 # level-based icon
 if (( $light == 0 )); then
 #	no bright
+    xbacklight -set 1
 	icon=""
 elif (( $light < 50 )); then
 #	low bright
