@@ -22,7 +22,7 @@ full=""
 short=""
 status=0
 
-step=5%
+step=5
 
 getBrightness() {
 	xbacklight
@@ -30,9 +30,13 @@ getBrightness() {
 
 
 case $BLOCK_BUTTON in
+    #right click
+    #set to 20%
+    3) lux -S 21% > /dev/null ;;
+
 	# scroll up
 	# raise bright
-	4) lux -a $step >/dev/null ;;
+	4) lux -a $step > /dev/null ;;
 
 	# scroll down
 	# lower bright
@@ -42,20 +46,15 @@ esac
 light=$(getBrightness)
 
 # level-based icon
-if (( $light == 0 )); then
+if (( $light <= 10 )); then
 #	no bright
-    xbacklight -set 1
-	icon=""
-elif (( $light < 50 )); then
+	icon=""
+elif (( $light >= 90 )); then
 #	low bright
 	icon=""
-elif (( $light < 100)); then
+elif (( $light < 90 && $light > 10 )); then
 #	high bright
 	icon=""
-else
-#	full bright
-	icon=""
-
 fi
 
 full=" ${light%.*}%"
