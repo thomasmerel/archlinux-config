@@ -60,6 +60,10 @@ if [ ${usage[4]%?} -ge 90 ]; then
 	status=33
 fi
 
+if [ $disk = "/" ]; then
+    disk="/home"
+fi
+
 full="$disk ${usage[4]}"
 short="$full"
 
