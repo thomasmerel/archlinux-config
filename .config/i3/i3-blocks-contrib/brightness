@@ -44,6 +44,14 @@ getBrightness() {
 
 # get mouse actions
 case $BLOCK_BUTTON in
+    #left click
+    #set to 100%
+    1) lux -S 100% > /dev/null ;;
+
+    #middle click
+    #set to 50%
+    2) lux -S 50% > /dev/null ;;
+    
     #right click
     #set to 20%
     3) lux -S 21% > /dev/null ;;

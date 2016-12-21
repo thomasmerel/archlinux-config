@@ -39,5 +39,7 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 setxkbmap fr
 twmnd &
-xrandr --dpi 226 & exec i3
+xrandr --dpi 226 &
+blueman-applet &
+exec i3
 #xrandr 1920x1080 & exec i3

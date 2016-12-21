@@ -31,7 +31,16 @@ isMuted() {
 	ponymix is-muted
 }
 
+# get mouse actions
 case $BLOCK_BUTTON in
+    #left click
+    #set to 50%
+    1) ponymix set-volume 50 >/dev/null ;;
+
+    #middle click
+    #set to 100%
+    2) ponymix set-volume 100 >/dev/null ;;
+
 	# right click
 	# mute/unmute
 	3) ponymix toggle >/dev/null ;;

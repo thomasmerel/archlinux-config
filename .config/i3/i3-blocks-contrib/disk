@@ -26,12 +26,22 @@ getDisk() {
 }
 disk=$(getDisk)
 
+usage=$(df -h $disk | sed -n '2 p')
+usage=($usage)
+
+if [ ${usage[4]%?} -ge 90 ]; then
+	status=33
+fi
+
+if [ $disk = "/" ]; then
+    disk="/home"
+fi
+
 case $BLOCK_BUTTON in
 	# right click: show details
 	# TODO: fix
 	3)
-		local summary=$(du -h --max-depth=1 $disk)
-		notify-send "Disk usage" "$summary"
+        notify-send "Disk used space : ${usage[4]}"
 	;;
 	# scroll up: cycle disks
 	4)
@@ -52,17 +62,6 @@ case $BLOCK_BUTTON in
 		disk=$(getDisk)
 	;;
 esac
-
-usage=$(df -h $disk | sed -n '2 p')
-usage=($usage)
-
-if [ ${usage[4]%?} -ge 90 ]; then
-	status=33
-fi
-
-if [ $disk = "/" ]; then
-    disk="/home"
-fi
 
 full="$disk ${usage[4]}"
 short="$full"
