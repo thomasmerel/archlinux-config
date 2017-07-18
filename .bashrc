@@ -1,3 +1,5 @@
+export VISUAL="vim"
+
 #
 # ~/.bashrc
 #

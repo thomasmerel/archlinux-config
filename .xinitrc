@@ -39,7 +39,12 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 setxkbmap fr
 twmnd &
-xrandr --dpi 226 &
-blueman-applet &
+#xrandr --dpi 226 &
+#blueman-applet &
+xrandr --newmode "1920x1080_60.00" 148.35 1920 2008 2052 2200 1080 1084 1089 1125 +hsync +vsync
+xrandr --addmode eDP1 1920x1080_60.00
+xrandr --output eDP1 --mode 1920x1080_60.00
 exec i3
-#xrandr 1920x1080 & exec i3
+#xrandr --output eDP1 --mode 1920x1080
+#exec i3
+

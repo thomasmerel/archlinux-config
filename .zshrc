@@ -1,9 +1,11 @@
 #Custom
 export DEFAULT_USER="vulture"
+export VISUAL="vim" 
 
-#
 # ~/.bashrc
 #
+
+PATH="$HOME/.npm-global/bin:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -35,6 +37,7 @@ alias webcam='vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"'
 alias repare-steam='find ~/.steam/root/ -name "libgpg-error.so*" -print -delete'
 alias discord='~/go/bin/discord-cli'
 alias bt='sudo bluetoothctl'
+alias copy='xclip -selection clipboard < '
 
 source=~/.profile
 
