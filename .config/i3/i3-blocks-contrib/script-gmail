@@ -3,8 +3,8 @@
 dir=$(dirname $0)
 source $dir/util.sh
 
-USER=thomas.merel.44gmail.com
-PASS=google_PAXM2s:T
+USER=this_is_not_my_email
+PASS=this_is_not_my_password
   
 COUNT=`curl -su $USER:$PASS https://mail.google.com/mail/feed/atom || echo "<fullcount>unknown number of</fullcount>"`
 COUNT=`echo "$COUNT" | grep -oPm1 "(?<=<fullcount>)[^<]+" `
